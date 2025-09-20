@@ -9,8 +9,7 @@ services:
     depends_on:
       - mongodb
     environment:
-      SPRING_DATA_MONGODB_URI: mongodb://mongodb/project_db
-      SPRING_DATA_MONGODB_PORT: 27017
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/project_db
     networks:
       - my-network
 
@@ -25,9 +24,15 @@ services:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "--quiet"]
       retries: 5
       start_period: 30s
+    volumes:
+      - mongo_data:/data/db
     networks:
       - my-network
 
 networks:
   my-network:
     driver: bridge
+
+volumes:
+  mongo_data:
+
