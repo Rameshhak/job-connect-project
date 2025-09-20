@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link th:href="@{/css/register.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+      <ul>
+          <li><a th:href="@{/home}">Home</a></li>
+          <li><a th:href="@{/register}">Register Page</a></li>
+          <!--<li><a th:href="@{/role-page}">Role Page</a></li>-->
+      </ul>
+  </nav>
+</header>
+<main>
+    <div>
+        <h2 class="title-name">Register Page</h2>
+    </div>
+    <form method="post" th:action="@{/register/save}" th:object="${user}">
+        <div class="name-box">
+            <label for="name" class="name-label">Name :</label>
+            <input type="text" class="name-input" th:field="*{name}" id="name" />
+        </div>
+        <div class="email-box">
+            <label for="email" class="email-label">Email :</label>
+            <input type="email" class="email-input" th:field="*{email}" id="email" />
+        </div>
+        <div class="password-box">
+            <label for="password" class="p-label">Password :</label>
+            <input type="password" class="p-input" th:field="*{password}" id="password" />
+        </div>
+        <div class="location-box">
+            <label for="location" class="l-label">Location :</label>
+            <input type="text" class="l-input" th:field="*{location}" id="location" />
+        </div>
+        <div class="role-container">
+            <label for="dropdown">Choose your status</label>
+            <select id="dropdown"  th:field="*{role}">
+                <option class="role1" value="ROLE_JOB-SEEKER">Job Seeker</option>
+                <option class="role2" value="ROLE_EMPLOYER">Employer</option>
+            </select>
+        </div>
+        <div class="submit-box">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+        <div class="text-msg">
+            <p>Already have an account? <a th:href="@{/login}">Log In</a></p>
+        </div>
+    </form>
+    <p class="success-msg" th:if="${param.success}">You have successfully registered!!!</p>
+    <p class="inform-msg" th:if="${param.success}">Go to login page</p>
+</main>
+</body>
+</html>
+
+
+
+
+

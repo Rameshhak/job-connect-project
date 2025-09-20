@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidate Applications</title>
+  <link th:href="@{/css/applications-arrived.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/employer/applications}">My Applications</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h2 class="title-name">Job Applications Received</h2>
+  <div th:each="app : ${applications}" class="application-card">
+    <p><strong>Job Title:</strong> <span th:text="${app.jobTitle}"></span></p>
+    <p><strong>Applicant Email:</strong> <span th:text="${app.applicantEmail}"></span></p>
+    <!--<p th:text="${#list.size(applications)}"></p>-->
+    <div class="actions">
+      <form th:action="@{/employer/accept/{id}(id=${app.id})}" method="post" class="form-one">
+        <button type="submit" class="accept-btn">Accept</button>
+      </form>
+      <!--<form th:action="@{/employer/accept/{id}(id=${app.id})}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <button type="submit" class="accept-btn">Accept</button>
+      </form>-->
+      <form th:action="@{/employer/cancel/{id}(id=${app.id})}" method="post" class="form-two">
+        <button type="submit" class="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+</main>
+</body>
+</html>

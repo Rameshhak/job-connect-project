@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/search/form}" method="get">
+    <input type="text" name="keyword" placeholder="Search jobs" th:value="${keyword}">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    <li th:each="job : ${jobs}">
+        <b th:text="${job.title}"></b> - <span th:text="${job.location}"></span>
+    </li>
+</ul>
+
+</body>
+</html>

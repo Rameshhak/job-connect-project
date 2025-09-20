@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <p class="company-name"><span>Job</span>Connect</p>
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/register}">Register Page</a></li>
+            <!--<li><a th:href="@{/role-page}">Role Page</a></li>-->
+        </ul>
+    </nav>
+</header>
+<main>
+    <div>
+        <h2 class="title-name">Login Page</h2>
+    </div>
+    <form method="post" th:action="@{/login}" >
+        <div class="name-box">
+            <label for="name" class="name-label">Username :</label>
+            <input type="text" class="name-input" id="name" name="username" placeholder="Enter email address" required />
+        </div>
+        <div class="password-box">
+            <label for="password" class="p-label">Password :</label>
+            <input type="password" class="p-input" id="password" name="password" placeholder="Enter password" required />
+        </div>
+        <div class="submit-box">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+        <div class="text-msg">
+            <p>New to here? <a th:href="@{/register}">Register here</a></p>
+        </div>
+    </form>
+    <p th:if="${error}">[[${error}]]</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div th:if="${param.error}">
+                <div class="error-msg">Invalid Email or Password</div>
+            </div>
+            <div th:if="${param.logout}">
+                <div class="success-msg">You have been logged out...</div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
+
+
+
+
+

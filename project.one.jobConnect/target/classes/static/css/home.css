@@ -1,0 +1,75 @@
+body{
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+header{
+  margin: 0;
+  padding: 0;
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*background-color: #F2F2F2;*/
+  background-color: #C1D8C3;
+  /*padding: 10px 30px;*/
+  padding: 8px 30px;
+  width: 85%;
+  margin: 20px auto;
+  border-radius: 50px;
+}
+.company-name{
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  /* color: #FFFFFF; */
+}
+.company-name span{
+  color: #eb501e;
+  padding-right: 6px;
+}
+header nav ul{
+  display: flex;
+  list-style: none;
+  padding-inline: 20px;
+  margin-inline: 20px;
+}
+header nav ul li{
+  margin-inline: 40px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 9px 18px;
+  border-radius: 6px;
+  background-color: #FF7518;
+  border: 1px solid #eb501e;
+}
+header nav ul li:hover{
+  border: 1px solid #eb501e;
+  background-color: #FFFFFF;
+  padding: 9px 18px;
+}
+header nav ul li a{
+  text-decoration: none;
+  color: #000000;
+}
+.home-content{
+  position: absolute;
+  left: 33%;
+  top: 200px;
+}
+h1{
+ letter-spacing: 2px;
+ font-size: 46px;
+}
+h3{
+  color: #eb501e;
+  font-size: 32px;
+  letter-spacing: 1px;
+  padding-left: 2px;
+}
+.home-content p{
+  padding-left: 70px;
+  font-size: 18px;
+}
