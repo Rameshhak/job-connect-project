@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Update Page</title>
+  <link th:href="@{/css/update-job.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/employer-page}">Employer Page</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div>
+    <h2 class="title-name">Job Update Page</h2>
+  </div>
+  <form method="post" th:action="@{/employer-page/update/{id}(id=${jobDetails.id})}" th:object="${jobDetails}">
+    <div class="id-box">
+      <label for="id" class="id-label">Job ID :</label>
+      <input type="text" class="id-input" th:field="*{id}" id="id" />
+    </div>
+    <div class="title-box">
+      <label for="title" class="t-label">Title :</label>
+      <input type="text" class="t-input" th:field="*{title}" id="title" />
+    </div>
+    <div class="description-box">
+      <label for="description" class="dc-label">Description :</label>
+      <textarea class="dc-input" th:field="*{description}" id="description" rows="4" cols="40" ></textarea>
+    </div>
+    <div class="location-box">
+      <label for="location" class="l-label">Location :</label>
+      <input type="text" class="l-input" th:field="*{location}" id="location" />
+    </div>
+    <div class="salary-box">
+      <label for="salary" class="s-label">Salary :</label>
+      <input type="text" class="s-input" th:field="*{salary}" id="salary" />
+    </div>
+    <div class="deadline-container">
+      <label for="deadline" class="dl-label">Deadline :</label>
+      <input type="text" class="dl-input" th:field="*{deadline}" id="deadline" />
+    </div>
+    <div class="employerMail-container">
+      <label for="e-mail" class="em-label">Emp Mail-Id :</label>
+      <input type="text" class="em-input" th:field="*{employerEmail}" id="e-mail" />
+    </div>
+    <div class="submit-box">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <p class="success-msg" th:if="${param.success}">You have successfully job updated!!!</p>
+</main>
+</body>
+</html>

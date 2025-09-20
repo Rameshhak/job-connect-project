@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employer Page</title>
+    <link th:href="@{/css/employer-page.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/register}">Register Page</a></li>
+      <li><a th:href="@{/login}">Login Page</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="text-content">
+  <h2>This page is specially to Employer</h2>
+  <p>you can create new job details, update and remove jobs details</p>
+  </div>
+  <div class="button-box">
+    <button class="create"><a th:href="@{/employer-page/create}">Create</a></button>
+    <button class="update"><a th:href="@{employer-page/job-lists/displayAll}">Job Lists Display</a></button>
+    <!--<button class="Remove"><a th:href="@{/employer-page/delete/{id}}">Remove</a></button>-->
+  </div>
+</main>
+</body>
+</html>

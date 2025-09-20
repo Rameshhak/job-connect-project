@@ -1,0 +1,161 @@
+/* General styles for desktop */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.company-name span {
+    color: #4CAF50;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2.title-name {
+    text-align: center;
+    color: #333;
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.success-msg {
+    color: #4CAF50;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Media Queries */
+
+/* Tablet (e.g., up to 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    .company-name {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile (e.g., up to 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .company-name {
+        font-size: 1rem;
+    }
+
+    main {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .id-box, .job-id-box, .j-title-box, .e-email-box, .a-email-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 0.25rem;
+    }
+
+    input[type="text"] {
+        padding: 0.5rem;
+    }
+
+    .submit-btn {
+        padding: 0.75rem;
+    }
+}

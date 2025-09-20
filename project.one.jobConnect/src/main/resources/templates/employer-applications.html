@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Creating Page</title>
+  <link th:href="@{/css/employer-applications.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/employer-page}">Employer Page</a></li>
+      <li><a th:href="@{/job-seeker-page}">Employer Page</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div>
+    <h2 class="title-name">Job Creating Page</h2>
+  </div>
+
+  <form method="post" th:action="@{/apply/{jobId}(id=${applications.jobId})}" th:object="${applications}">
+    <div class="id-box">
+      <label for="id" class="id-label">ID :</label>
+      <input type="text" class="id-input" th:field="*{id}" id="id" />
+    </div>
+    <div class="job-id-box">
+      <label for="job-id" class="j-id-label">Job ID :</label>
+      <input type="text" class="j-id-input" th:field="*{jobId}" id="job-id" />
+    </div>
+    <div class="j-title-box">
+      <label for="j-title" class="t-label">Job Title :</label>
+      <input type="text" class="t-input" th:field="*{jobTitle}" id="j-title" />
+    </div>
+    <div class="e-email-box">
+      <label for="e-email" class="e-email-label">Employer Email :</label>
+      <input type="text" class="e-email-input" th:field="*{employerEmail}" id="e-email" />
+    </div>
+    <div class="a-email-box">
+      <label for="a-email" class="a-email-label">Applicant Email :</label>
+      <input type="text" class="a-email-input" th:field="*{applicantEmail}" id="a-email" />
+    </div>
+    <div class="submit-box">
+      <button type="submit" class="submit-btn">Submit</button>
+    </div>
+  </form>
+  <p class="success-msg" th:if="${param.success}">You have successfully applied!!!</p>
+</main>
+</body>
+</html>

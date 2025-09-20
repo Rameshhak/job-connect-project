@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job List Display Page</title>
+    <link th:href="@{/css/job-lists-to-jobseeker.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <p class="company-name"><span>Job</span>Connect</p>
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/register}">Register Page</a></li>
+            <li><a th:href="@{/login}">Login Page</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2 class="text-content">Job List Filtered by title</h2>
+    <div class="search-container">
+        <form th:action="@{/search}" method="get">
+            <input type="text" name="keyword" placeholder="Search jobs..." th:value="${keyword}">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <div th:each="job : ${jobs}" class="container">
+        <p>Job ID: <span th:text="${job.id}"></span></p>
+        <p>Title: <span th:text="${job.title}"></span></p>
+        <p>Description: <span th:text="${job.description}"></span></p>
+        <p>Location: <span th:text="${job.location}"></span></p>
+    </div>
+</main>
+</body>
+</html>

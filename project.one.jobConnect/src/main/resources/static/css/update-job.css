@@ -1,0 +1,130 @@
+body{
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+header{
+  margin: 0;
+  padding: 0;
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*background-color: #F2F2F2;*/
+  background-color: #C1D8C3;
+  /*padding: 10px 30px;*/
+  padding: 8px 30px;
+  width: 85%;
+  margin: 20px auto;
+  border-radius: 50px;
+}
+.company-name{
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.company-name span{
+  color: #eb501e;
+  padding-right: 6px;
+}
+header nav ul{
+  display: flex;
+  list-style: none;
+  padding-inline: 20px;
+  margin-inline: 20px;
+}
+header nav ul li{
+  margin-inline: 40px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 9px 18px;
+  border-radius: 6px;
+  background-color: #FF7518;
+  border: 1px solid #eb501e;
+}
+header nav ul li:hover{
+  border: 1px solid #eb501e;
+  background-color: #FFFFFF;
+  padding: 9px 18px;
+}
+header nav ul li a{
+  text-decoration: none;
+  color: #000000;
+}
+.title-name{
+  text-align: center;
+  margin-top: 30px;
+}
+main{
+  width: 370px;
+  margin-top: 30px;
+  border: 1px solid #FFFFFF;
+  background-color: #FFD580;
+  border-radius: 8px;
+  position: absolute;
+  left: 36%;
+}
+form{
+  margin: 12px 14px 0px 14px;
+}
+.id-label, .t-label, .dc-label, .l-label, .s-label, .dl-label{
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  margin: 10px 9px 0px 4px;
+}
+.id-input, .t-input, .dc-input, .l-input, .s-input, .dl-input{
+  font-size: 18px;
+  padding: 8px 16px;
+  width: 60%;
+  border-radius: 8px;
+  margin: 6px 0px;
+  border: none;
+  background-color: #FFFFFF;
+}
+.t-label{
+  margin-right: 25px;
+}
+.l-label{
+  margin-right: 0px;
+}
+.s-label{
+  margin-right: 20px;
+}
+.dl-label{
+  margin-right: 0px;
+}
+.dc-input{
+  margin-left: 82px;
+}
+.employerMail-container{
+    margin: 12px 0px;
+}
+.em-label{
+  font-size: 19px;
+  margin-left: 4px;
+}
+.em-input{
+  font-size: 18px;
+  width: 53%;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+}
+.submit-btn{
+  font-size: 16px;
+  padding: 9px 0px;
+  width: 99%;
+  background-color: #80AAFF;
+  border: 1px solid #80AAFF;
+  border-radius: 6px;
+  margin: 18px 0px 14px 2px;
+}
+.success-msg{
+  color: #FFFFFF;
+  background-colo: #32CD32;
+  border-radius: 8px;
+  margin: 15px 0px;
+}

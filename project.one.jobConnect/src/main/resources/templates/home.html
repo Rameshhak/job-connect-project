@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <nav>
+        <p class="company-name"><span>Job</span>Connect</p>
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/register}">Register Page</a></li>
+            <li><a th:href="@{/login}">Login Page</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="home-content">
+      <h1>Welcome To Our Website</h1>
+      <h3>Discover Job Career In Job Connect</h3>
+      <p>Professional Job and Career Platform for World</p>
+      </div>
+    </main>
+</body>
+</html>

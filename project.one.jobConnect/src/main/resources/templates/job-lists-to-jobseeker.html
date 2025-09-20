@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Job List Display Page</title>
+  <link th:href="@{/css/job-lists-to-jobseeker.css}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/register}">Register Page</a></li>
+      <li><a th:href="@{/login}">Login Page</a></li>
+      <li><a th:href="@{/search}">Search Jobs</a></li>
+    </ul>
+  </nav>
+</header>
+<!--<main>
+  <h2 class="text-content">Job List Collections</h2>
+
+  <div th:each="job : ${jobLists}" class="container">
+    <p class="line1">Job ID : <span th:text="${job.id}" class="value1"></span></p>
+    <p class="line1">Job title : <span th:text="${job.title}" class="value2"></span></p>
+    <p class="line1">Job description : <span th:text="${job.description}" class="value3"></span></p>
+    <p class="line1">Job location : <span th:text="${job.location}" class="value4"></span></p>
+    <p class="line1">Job salary : <span th:text="${job.salary}" class="value5"></span></p>
+    <p class="line1">Job deadline : <span th:text="${job.deadline}" class="value6"></span></p>
+    <p class="line1">Employer: <span th:text="${job.employerEmail}" class="value6"></span></p>
+
+    <div class="button-container">
+   <button class="applyBtn" >Apply</button>
+  </div>
+  </div>
+</main>-->
+<main>
+  <h2 class="text-content">Job List Collections</h2>
+
+  <div th:each="job : ${jobLists}" class="container">
+    <p class="line1">Job ID : <span th:text="${job.id}" class="value1"></span></p>
+    <p class="line1">Job title : <span th:text="${job.title}" class="value2"></span></p>
+    <p class="line1">Job description : <span th:text="${job.description}" class="value3"></span></p>
+    <p class="line1">Job location : <span th:text="${job.location}" class="value4"></span></p>
+    <p class="line1">Job salary : <span th:text="${job.salary}" class="value5"></span></p>
+    <p class="line1">Job deadline : <span th:text="${job.deadline}" class="value6"></span></p>
+    <p class="line1">Employer: <span th:text="${job.employerEmail}" class="value6"></span></p>
+
+    <div class="button-container">
+      <button class="applyBtn"
+              th:data-job-id="${job.id}"
+              th:data-job-title="${job.title}"
+              th:data-employer-email="${job.employerEmail}"
+              th:data-user-email="${userEmail}">Apply</button>
+    </div>
+  </div>
+</main>
+  <script th:src="@{/css/apply.js}"></script>
+</body>
+</html>

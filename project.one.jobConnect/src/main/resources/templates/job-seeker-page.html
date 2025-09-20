@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employer Page</title>
+  <link th:href="@{/css/employer-page.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <p class="company-name"><span>Job</span>Connect</p>
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/register}">Register Page</a></li>
+      <li><a th:href="@{/login}">Login Page</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="text-content">
+    <h2>This page is specially to Job-Seeker</h2>
+    <p>you can view, apply jobs details</p>
+  </div>
+  <div class="button-box">
+    <button class="update"><a th:href="@{employer-page/job-lists/displayAll}">Job Lists View</a></button>
+  </div>
+</main>
+</body>
+</html>
